@@ -1,0 +1,15 @@
+.cabecera{
+    height: 100px; /*altura*/
+    background-color: rgb(22, 59, 118);/*color del fondo*/
+    color: white;
+    font-weight: bold; /*negrilla*/
+    line-height: 100px;
+    padding-left: 30px; /*magen interno inzquierdo*/
+    font-size: larger; /*tamaño de texto(fuente)*/
+}
+.barra{
+    height: 30px; /*altura*/
+    background-color: rgb(212, 219, 222);/*color del fondo*/
+    line-height: 30px;/*centrar verticalmente*/
+    padding-left: 10px; /*magen interno inzquierdo*/
+}
