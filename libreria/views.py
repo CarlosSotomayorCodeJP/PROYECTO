@@ -14,3 +14,5 @@ def libros(request):
     libros = Libro.objects.all()
     
     return render(request, 'libros/index.html', {'libros': libros})
+def crear(request):
+    return render(request, 'libros/crear.html' )
