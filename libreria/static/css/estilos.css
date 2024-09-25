@@ -12,6 +12,19 @@
     background-color: rgb(212, 219, 222);/*color del fondo*/
     line-height: 30px;/*centrar verticalmente*/
     padding-left: 10px; /*magen interno inzquierdo*/
+    text-decoration: none;
+}
+.barra ul{
+    list-style-type: none;
+}
+.barra li{
+    margin: 10px 0 ;
+}
+.barra a{
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: #000; /* Color del texto */
+    display: block; /* Hace que los enlaces ocupen todo el ancho del contenedor */
+    padding: 10px; /* Espaciado interno */
 }
 .opciones{
     display: initial;
