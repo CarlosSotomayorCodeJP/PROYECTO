@@ -7,3 +7,6 @@ class Libro(models.Model):
     imagen=models.ImageField(upload_to='imagenes/', verbose_name='Imagen', null=True)
     descripcion=models.TextField(null=True, verbose_name='Descripción')
 
+    def __str__(self):
+        cabecera = self.titulo + ' - ' + self.descripcion 
+        return cabecera
