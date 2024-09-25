@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Libro
 
 # Create your views here.
 def inicio(request):
@@ -9,3 +10,7 @@ def contacto(request):
     return render(request, 'contacto.html')
 def acerca(request):
     return render(request, 'acerca.html')
+def libros(request):
+    libros = Libro.objects.all()
+    
+    return render(request, 'libros/index.html', {'libros': libros})

@@ -1,0 +1,25 @@
+{% extends "layouts/base.html" %}
+{% block titulo %}Listado de Libros{% endblock %}
+
+{% block contenedor %}
+
+<h3>Lista</h3>
+<br>
+<a href="#" class="btn btn-primary">Subir</a>
+<br>
+<div class="row mt-4">
+    {% for fila in libros %}
+    <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+            <img src="{{fila.imagen.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{fila.titulo}}</h5>
+              <p class="card-text">{{fila.descripcion}}</p>
+              <a href="#" class="btn btn-info">Leer mas</a>
+            </div>
+          </div>
+    </div>
+    {% endfor %}
+    
+</div>
+{% endblock %}
