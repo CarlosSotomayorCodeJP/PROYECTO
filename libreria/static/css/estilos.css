@@ -13,3 +13,17 @@
     line-height: 30px;/*centrar verticalmente*/
     padding-left: 10px; /*magen interno inzquierdo*/
 }
+.opciones{
+    display: initial;
+    padding-left: 8px;
+
+}
+.enlaces{
+    color: rgb(158, 153, 141);
+    text-decoration: none;
+
+}
+.enlaces.hover{
+    color: antiquewhite;
+    font-weight: bold;
+}
