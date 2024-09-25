@@ -1,42 +1,29 @@
 .cabecera{
-    height: 100px; /*altura*/
-    background-color: rgb(22, 59, 118);/*color del fondo*/
+    height: 100px; /* altura*/
+    background-color: rgb(23, 50, 94); /* fondo de color*/
     color: white;
-    font-weight: bold; /*negrilla*/
+    font-weight: bold; /* Negrita*/
     line-height: 100px;
-    padding-left: 30px; /*magen interno inzquierdo*/
-    font-size: larger; /*tamaño de texto(fuente)*/
+    padding-left: 30px; /* margen interno izquierdo*/
+    font-size: larger; /* tamaño de texto*/
 }
 .barra{
-    height: 30px; /*altura*/
-    background-color: rgb(212, 219, 222);/*color del fondo*/
-    line-height: 30px;/*centrar verticalmente*/
-    padding-left: 10px; /*magen interno inzquierdo*/
-    text-decoration: none;
-}
-.barra ul{
-    list-style-type: none;
-}
-.barra li{
-    margin: 10px 0 ;
-}
-.barra a{
-    text-decoration: none; /* Elimina el subrayado de los enlaces */
-    color: #000; /* Color del texto */
-    display: block; /* Hace que los enlaces ocupen todo el ancho del contenedor */
-    padding: 10px; /* Espaciado interno */
+    display: flex;
+    height: 30px; /* altura*/
+    background-color: rgb(14, 34, 66); /* fondo de color*/
+    line-height: 30px; /*centrar verticalmente*/
+    padding-left: 10px; /* margen interno izquierdo*/
 }
 .opciones{
-    display: initial;
+    display: inline;
     padding-left: 8px;
-
 }
 .enlaces{
-    color: rgb(158, 153, 141);
+    color: rgb(227, 218, 218);
     text-decoration: none;
-
 }
-.enlaces.hover{
-    color: antiquewhite;
+
+.enlaces:hover{
+    color: white;
     font-weight: bold;
 }
