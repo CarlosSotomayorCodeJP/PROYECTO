@@ -25,6 +25,13 @@
     </nav>
     <main>
         <div class="container">
+            {% for mensaje in messages %}
+            <div class="alert alert-{{mensaje.tags}} alert-dismissible fade show" role="alert">
+                <strong>Mensaje!</strong>  {{mensaje}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+               
+            {% endfor %}
             {% block contenedor %}{% endblock %}
         </div>
     </manin>

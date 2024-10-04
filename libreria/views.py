@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Libro
 from .forms import Libroform
-
+from django.contrib import messages
 # Create your views here.
 def inicio(request):
     #return HttpResponse('<h1>INICIO</h1>')
@@ -17,5 +17,9 @@ def libros(request):
     return render(request, 'libros/index.html', {'libros': libros})
 
 def crear(request):
-    form= Libroform()
+    form= Libroform(request.POST or None, request.FILES or None)
+    if form.is_valid():
+        form.save()
+        messages.info(request, 'Creado con exito!!!')
+        return redirect('libros.index')
     return render(request, 'libros/crear.html', {'form': form} )
