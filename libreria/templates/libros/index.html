@@ -16,6 +16,7 @@
               <h5 class="card-title">{{fila.titulo}}</h5>
               <p class="card-text">{{fila.descripcion}}</p>
               <a href="#" class="btn btn-info">Leer mas</a>
+              <a href="{% url "libros.editar" fila.id %}" class="btn btn-light">Editar</a>
             </div>
           </div>
     </div>

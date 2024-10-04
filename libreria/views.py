@@ -23,3 +23,12 @@ def crear(request):
         messages.info(request, 'Creado con exito!!!')
         return redirect('libros.index')
     return render(request, 'libros/crear.html', {'form': form} )
+def editar(request, id):
+    libro=Libro.objects.get(id=id)
+    form=Libroform(request.POST or None, request.FILES or None, instance=libro)
+    if form.is_valid() and request.POST:
+        form.save()
+        messages.success(request, 'Modificado con exito!!!')
+        return redirect('libros.index')
+    return render(request, 'libros/editar.html', {'form': form} )
+
