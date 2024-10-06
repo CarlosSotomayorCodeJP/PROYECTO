@@ -13,5 +13,8 @@ class Libro(models.Model):
     def save(self, using=None, keep_parents=False):
         if self.pk is not None:
             old_imagen=Libro.objects.get(pk=self.pk)
+            if old_imagen.imagen.path != self.imagen.path:
+                self.imagen.storage.delete(old_imagen.imagen.path)
+        super().save()
 
 

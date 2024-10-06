@@ -4,6 +4,8 @@ from .models import Libro
 from .forms import Libroform
 from django.contrib import messages
 # Create your views here.
+
+from django.contrib.auth.decorators import login_required
 def inicio(request):
     #return HttpResponse('<h1>INICIO</h1>')
     return render(request, 'index.html')
@@ -16,6 +18,7 @@ def libros(request):
     
     return render(request, 'libros/index.html', {'libros': libros})
 
+@login_required
 def crear(request):
     form= Libroform(request.POST or None, request.FILES or None)
     if form.is_valid():
