@@ -18,11 +18,11 @@
             <li class="opciones"><a class='enlaces' href="{% url "libros.index" %}">Libros</a></li>
             <li class="opciones"><a class='enlaces' href="{% url "contacto" %}">Contactar</a></li>            
             <li class="opciones"><a class='enlaces' href="{% url "acerca" %}">Acerca de</a></li>
-            <li class="opciones"><a class='enlaces' href="">Ingreso</a></li>
-            <li class="opciones"><a class='enlaces' href="">Registro</a></li>
-            <li class="opciones"><a class='enlaces' href="">Salir</a></li>
             {% if request.user.is_authenticated %}
-                
+                <li class="opciones"><a class="enlaces" onclick="return confirm('Desea Cerrar Sesión?');" href="{% url 'exit'%}">Cerrar Sesión</a>    <spam class="badge bg-success">En linea</spam></li>
+            {% else %}
+                <li class="opciones"><a class='enlaces' href="{% url 'login'%}">Iniciar Sesión</a></li>
+                <li class="opciones"><a class='enlaces' href="">Registro</a></li>
             {% endif %}
         </ul>
     </nav>

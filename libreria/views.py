@@ -6,6 +6,7 @@ from django.contrib import messages
 # Create your views here.
 
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 def inicio(request):
     #return HttpResponse('<h1>INICIO</h1>')
     return render(request, 'index.html')
@@ -35,4 +36,7 @@ def editar(request, id):
         messages.success(request, 'Modificado con exito!!!')
         return redirect('libros.index')
     return render(request, 'libros/editar.html', {'form': form} )
+def salir(request):
+    logout(request)
+    return redirect('inicio')
 

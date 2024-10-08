@@ -2,4 +2,10 @@
 {% block titulo %}Inicio{% endblock %}
 {% block contenedor %}
 <h3>Inicio</h3>
+{% if request.user.is_authenticated %}
+    <p>
+        <h5>Bienvenido, {{user.username }}</h5>
+        Correo:{{user.email}}
+    </p>
+{% endif %}
 {% endblock %}
