@@ -26,6 +26,7 @@ def crear(request):
         messages.info(request, 'Creado con exito!!!')
         return redirect('libros.index')
     return render(request, 'libros/crear.html', {'form': form} )
+@login_required
 def editar(request, id):
     libro=Libro.objects.get(id=id)
     form=Libroform(request.POST or None, request.FILES or None, instance=libro)

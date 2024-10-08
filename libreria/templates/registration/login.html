@@ -1,0 +1,20 @@
+{% extends "layouts/base.html" %}
+{% block titulo %}Login{% endblock %}
+{% block contenedor %}
+
+
+<br>
+<div class="card" style="width: 30rem;">
+    <div class='card-header'>
+        <h3>Iniciar sesión</h3>
+    </div>
+    <div class="card-body">
+       <form acction="" method="post">
+            {% csrf_token %}
+            {{form }}
+            <input type="submit" value="ingresar" class="btn btn-primary"> 
+       </form>
+    </div>
+</div>
+
+{% endblock %}

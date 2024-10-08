@@ -21,6 +21,9 @@
             <li class="opciones"><a class='enlaces' href="">Ingreso</a></li>
             <li class="opciones"><a class='enlaces' href="">Registro</a></li>
             <li class="opciones"><a class='enlaces' href="">Salir</a></li>
+            {% if request.user.is_authenticated %}
+                
+            {% endif %}
         </ul>
     </nav>
     <main>
