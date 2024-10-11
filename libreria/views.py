@@ -16,7 +16,6 @@ def acerca(request):
     return render(request, 'acerca.html')
 def libros(request):
     libros = Libro.objects.all()
-    
     return render(request, 'libros/index.html', {'libros': libros})
 
 @login_required
@@ -39,4 +38,7 @@ def editar(request, id):
 def salir(request):
     logout(request)
     return redirect('inicio')
+def regsitro(request):
+    return render(request, 'registration/regsitro.html')
+
 
