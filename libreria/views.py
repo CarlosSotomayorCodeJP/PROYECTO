@@ -35,6 +35,12 @@ def editar(request, id):
         messages.success(request, 'Modificado con exito!!!')
         return redirect('libros.index')
     return render(request, 'libros/editar.html', {'form': form} )
+@login_required
+def eliminar(request, id):
+    libro = Libro.objects.get(id = id)
+    libro.delete()
+    messages.warning(request, 'Eliminado con exito')
+    return redirect('libros.index')
 def salir(request):
     logout(request)
     return redirect('inicio')
