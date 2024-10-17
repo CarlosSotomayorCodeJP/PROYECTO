@@ -10,6 +10,9 @@ class Libro(models.Model):
     def __str__(self):
         cabecera = self.titulo + ' - ' + self.descripcion 
         return cabecera
+    def delete(self, using=None, keep_parents=False):
+        self.imagen.storage.delete(self.imagen.name)
+        super().delete()
     def save(self, using=None, keep_parents=False):
         if self.pk is not None:
             old_imagen=Libro.objects.get(pk=self.pk)
