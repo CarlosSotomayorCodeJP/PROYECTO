@@ -1,19 +1,21 @@
 {% extends "layouts/base.html" %}
-{% block titulo %}Registro{% endblock %}
+{% block titulo %}Registro{% endblock  %}
 {% block contenedor %}
-{% load crispy_forms_tags %}
 
-<div class="card">
+{% load crispy_forms_tags %}
+<br>
+<div class="card mx-auto" style="width: 30rem;">
     <div class="card-header">
         <h3>Registro de nuevo usuario</h3>
     </div>
     <div class="card-body">
         <form action="" method="post">
+            {% csrf_token %}
+            {{ form | crispy}}
+            <a href="{% url 'login' %}">Ya tengo cuenta</a>
             <input type="submit" value="Registrarme" class="btn btn-primary float-end">
-                <a href="{% url 'login' %}">Ya tengo cuenta</a>
-
         </form>
     </div>
-
+</div>
 
 {% endblock %}

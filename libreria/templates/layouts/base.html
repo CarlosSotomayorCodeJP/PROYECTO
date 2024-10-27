@@ -22,7 +22,7 @@
                 <li class="opciones"><a class="enlaces" onclick="return confirm('Desea Cerrar Sesión?');" href="{% url 'exit'%}">Cerrar Sesión</a>    <spam class="badge bg-success">En linea</spam></li>
             {% else %}
                 <li class="opciones"><a class='enlaces' href="{% url 'login'%}">Iniciar Sesión</a></li>
-                <li class="opciones"><a class='enlaces' href="">Registro</a></li>
+                <li class="opciones"><a class='enlaces' href="{% url 'registro'%}">Registro</a></li>
             {% endif %}
         </ul>
     </nav>

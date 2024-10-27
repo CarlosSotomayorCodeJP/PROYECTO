@@ -1,22 +1,24 @@
 {% extends "layouts/base.html" %}
-{% block titulo %}Login{% endblock %}
+{% block titulo %}Inicio de Sesión{% endblock  %}
 {% block contenedor %}
+
 {% load crispy_forms_tags %}
 
-<br>
+<br>    
 <div class="card mx-auto" style="width: 30rem;">
-    <div class='card-header'>
-        <h3>Iniciar sesión</h3>
+    <div class="card-header">
+        <h3>Inicio de Sesión</h3>
     </div>
     <div class="card-body">
-       <form acction="" method="post">
-            {% csrf_token %}
-            {{form | crispy}}
-            <a href="">Registrarse</a>
+        <form action="" method="post">
+           {% csrf_token %} 
+           {{ form | crispy}}
+            <a href="{% url 'registro' %}">Registrame</a> &nbsp;
             <a href="{% url 'inicio' %}">Inicio</a>
-            <input type="submit" value="ingresar" class="btn btn-primary float-end"> 
-       </form>
+            <input type="submit" value="Ingresar" class="btn btn-primary float-end">
+        </form>
     </div>
 </div>
+        
 
-{% endblock %}
+{% endblock  %}
