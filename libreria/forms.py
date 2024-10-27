@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
  
 
-class Libroform (forms.ModelForm):
+class LibroForm (forms.ModelForm):
     class Meta:
         model = Libro
         fields = '__all__'
