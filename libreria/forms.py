@@ -14,7 +14,7 @@ class CustomUserCreationForm(UserCreationForm):
     first_name = forms.CharField(required=True)
 
     class Meta:
-        model : User
+        model= User
         fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
     
     def clean_email(self):
