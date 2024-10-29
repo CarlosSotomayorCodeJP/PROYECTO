@@ -2,15 +2,25 @@
 {% block titulo %}Contacto{% endblock %}
 {% block contenedor %}
 
-<h3>Contactar</h3>
-<div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Correo eléctronico</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+<h3>Cantacto</h3>
+
+<form action="{% url 'contactame' %}" method="post">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="nombres" class="form-label">Nombres</label>
+    <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Nombres" required>
   </div>
   <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Comentario</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <label for="correo" class="form-label">Correo Electronico</label>
+    <input type="email" class="form-control" id="correo"  name="correo" placeholder="name@example.com" required>
   </div>
-  <button type="button" class="btn btn-primary">Enviar</button>
+  <div class="mb-3">
+    <label for="comentario" class="form-label">Comentario</label>
+    <textarea class="form-control" id="comentario" name="comentario" rows="3" required></textarea>
+  </div>
+  <button type="reset" class="btn btn-primary">Cancelar</button>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
 
 {% endblock %}

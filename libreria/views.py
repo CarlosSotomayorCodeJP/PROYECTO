@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
-from .models import Libro
+from .models import Libro, Cantactame
 from .forms import LibroForm
 
 from django.contrib import messages
@@ -12,7 +12,7 @@ from django.contrib.auth import logout
 from .forms import CustomUserCreationForm
 from django.contrib.auth import authenticate, login
 
-
+from django.db import connection
 def inicio(request):
     #return HttpResponse('<h1>Inicio</h1>')
     return render(request, 'index.html')
@@ -71,3 +71,22 @@ def registro(request):
         else:
             data['form'] = usuario_creation_form
     return render(request, 'registration/registro.html', data)
+def contactame(request):
+    nombres = request.POST.get('nombres')
+    correo = request.POST.get('correo') 
+    comentario = request.POST.get('comentario')
+    contact = Cantactame(nombres = nombres, correo = correo, comentario = comentario)
+    contact.save()
+    messages.success(request, 'El administrador se comunicara por el correo electrónico!!!')
+    return redirect('contacto')
+
+def listarComen(request):
+    #listado = Cantactame.objects.raw('select * from libreria_libro')
+    with connection.cursor() as cursor:
+        cursor.execute('select * from libreria_libro where titulo = %s' , ['Boca del Tunes'])
+        listado = cursor.fetchone() 
+
+    for fila in listado:
+       # print(fila.titulo)
+        print(fila)
+    return redirect('inicio')

@@ -2,7 +2,6 @@ from django import forms
 from .models import Libro
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
- 
 
 class LibroForm (forms.ModelForm):
     class Meta:
@@ -10,11 +9,11 @@ class LibroForm (forms.ModelForm):
         fields = '__all__'
 
 class CustomUserCreationForm(UserCreationForm):
-    email = forms.EmailField(required=True)
-    first_name = forms.CharField(required=True)
+    email = forms.EmailField(required=True, label='Correo Electrónico')
+    first_name = forms.CharField(required=True, label='Nombre')
 
     class Meta:
-        model= User
+        model = User
         fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
     
     def clean_email(self):

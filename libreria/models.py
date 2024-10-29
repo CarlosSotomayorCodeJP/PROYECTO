@@ -19,5 +19,9 @@ class Libro(models.Model):
             if old_imagen.imagen.path != self.imagen.path:
                 self.imagen.storage.delete(old_imagen.imagen.path)
         super().save()
+class Cantactame(models.Model):
+    nombres = models.CharField(null=False, max_length=255)
+    correo = models.EmailField(null=False)
+    comentario = models.TextField(null=False)
 
 
